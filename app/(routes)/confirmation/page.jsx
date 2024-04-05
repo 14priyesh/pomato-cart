@@ -11,9 +11,9 @@ function Confirmation() {
         <CheckCircle2 className='h-24 w-24 text-primary' />
         <h2 className='font-medium text-3xl text-primary'>Order Successfull</h2>
         <h2>Thank you so much for order</h2>
-       <Link href={'/my-order'}> <Button className="mt-8">
+       {/* <Link href={'/my-order'}> <Button className="mt-8">
           Track your order</Button>
-          </Link>
+          </Link> */}
     </div>
     </div>
   )

@@ -4,7 +4,7 @@ const MASTER_URL=process.env.NEXT_PUBLIC_BACKEDN_API_URL;
 
 /**
  * Used to Make Get Category API request
- * @returns 
+ * @returns
  */
 const GetCategory=async()=>{
     const query=gql`
@@ -42,6 +42,9 @@ const GetBusiness=async(category)=>{
       restroType
       slug
       workingHours
+      reviews {
+        star
+      }
     }
   }  
   `
@@ -53,39 +56,42 @@ const GetBusiness=async(category)=>{
 const GetBusinessDetail=async(businessSlug)=>{
   const query = gql`
   query RestaurantDetail {
-    restaurant(where: {slug: "`+businessSlug+`"}) {
-      aboutUs
-      address
-      banner {
-        url
-      }
-      categories {
-        name
-      }
-      id
+  restaurant(where: {slug: "`+businessSlug+`"}) {
+    aboutUs
+    address
+    banner {
+      url
+    }
+    categories {
       name
-      restroType
-      slug
-      workingHours
-      menu {
-        ... on Menu {
-          id
-          category
-          menuItem {
-            ... on MenuItems {
-              id
-              name
-              description
-              price
-              productImage {
-                url
-              }
+    }
+    id
+    name
+    restroType
+    slug
+    workingHours
+    menu {
+      ... on Menu {
+        id
+        category
+        menuItem {
+          ... on MenuItem {
+            id
+            name
+            description
+            price
+            productImage {
+              url
             }
           }
         }
       }
     }
+    reviews {
+        star
+      }
   }
+}
   `
   const result=await request(MASTER_URL,query);
   return result;
@@ -138,14 +144,13 @@ const GetUserCart=async(userEmail)=>{
 const DisconnectRestroFromUserCartItem=async(id)=>{
   const query=gql`
   mutation DisconnectRestaurantFromCartItem {
-    updateUserCart(data: {restaurant: {disconnect: true}}, where: {id: "`+id+`"})
-    {
-      id
-    }
-    publishManyUserCarts(to: PUBLISHED) {
-      count
-    }
+  updateUserCart(data: {restaurant: {disconnect: true}}, where: {id: "`+id+`"}) {
+    id
   }
+  publishManyUserCarts(to: PUBLISHED) {
+    count
+  }
+}
   `;
   const result=await request(MASTER_URL,query);
   return result;
@@ -154,10 +159,10 @@ const DisconnectRestroFromUserCartItem=async(id)=>{
 const DeleteItemFromCart=async(id)=>{
   const query=gql`
   mutation DeleteCartItem {
-    deleteUserCart(where: {id: "`+id+`"}) {
-      id
-    }
+  deleteUserCart(where: {id: "`+id+`"}) {
+    id
   }
+}
   `
   const result=await request(MASTER_URL,query);
   return result;
