@@ -43,16 +43,19 @@ function Header() {
     <div className='flex justify-between items-center
     py-6  shadow-sm '>
        <Link href={'/'}> <Image src='/logo.png' alt='logo'
-        width={230}
+        width={450}
         height={230} />
         </Link>
 
-        <div className='hidden md:flex border p-2 rounded-lg bg-gray-100 w-96'>
-            <input type='text' 
+        {/* <div className='hidden md:flex border p-2 rounded-lg bg-gray-100 w-96'>
+            <input type='text'
             placeholder='Search'
             className='bg-transparent w-full outline-none' />
             <Search className='text-primary' />
-        </div>
+        </div> */}
+
+
+
 
       {isSignedIn?
       <div className='flex gap-3 items-center'>
@@ -76,8 +79,8 @@ function Header() {
         <DropdownMenu>
         <DropdownMenuTrigger>
         <Image src={user?.imageUrl} alt='user'
-        width={35}
-        height={35}
+        width={50}
+        height={50}
         className='rounded-full'
         />
         </DropdownMenuTrigger>
