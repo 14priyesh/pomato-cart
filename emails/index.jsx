@@ -41,67 +41,17 @@ export default function Email() {
                     </p>
 
                     {/* Order Summary */}
-                    <table
-                      cellSpacing="0"
-                      cellPadding="10"
-                      width="100%"
-                      style={{ marginTop: '30px', border: '1px solid #e0e0e0', borderRadius: '5px' }}
-                    >
-                      <tbody>
-                        <tr style={{ backgroundColor: '#f8f8f8' }}>
-                          <th style={{ textAlign: 'left', padding: '10px 20px', borderBottom: '1px solid #e0e0e0' }}>
-                            Item
-                          </th>
-                          <th style={{ textAlign: 'left', padding: '10px 20px', borderBottom: '1px solid #e0e0e0' }}>
-                            Quantity
-                          </th>
-                          <th style={{ textAlign: 'left', padding: '10px 20px', borderBottom: '1px solid #e0e0e0' }}>
-                            Price
-                          </th>
-                        </tr>
-                        {/* Sample Order Item with Image */}
-                        <tr>
-                          <td style={{ textAlign: 'left', padding: '10px 20px', borderBottom: '1px solid #e0e0e0' }}>
-                            <img
-                              src="https://via.placeholder.com/50x50"  // Replace with actual image URL
-                              alt="Chicken Burger"
-                              style={{ marginRight: '10px', verticalAlign: 'middle' }}
-                            />
-                            Chicken Burger
-                          </td>
-                          <td style={{ textAlign: 'left', padding: '10px 20px', borderBottom: '1px solid #e0e0e0' }}>2</td>
-                          <td style={{ textAlign: 'left', padding: '10px 20px', borderBottom: '1px solid #e0e0e0' }}>
-                            $10.00
-                          </td>
-                        </tr>
-                        {/* Sample Order Item with Image */}
-                        <tr>
-                          <td style={{ textAlign: 'left', padding: '10px 20px', borderBottom: '1px solid #e0e0e0' }}>
-                            <img
-                              src="https://via.placeholder.com/50x50"  // Replace with actual image URL
-                              alt="Pizza Margherita"
-                              style={{ marginRight: '10px', verticalAlign: 'middle' }}
-                            />
-                            Pizza Margherita
-                          </td>
-                          <td style={{ textAlign: 'left', padding: '10px 20px', borderBottom: '1px solid #e0e0e0' }}>1</td>
-                          <td style={{ textAlign: 'left', padding: '10px 20px', borderBottom: '1px solid #e0e0e0' }}>
-                            $12.00
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
+                    
 
                     {/* Total */}
                     <p style={{ marginTop: '20px', fontSize: '18px', fontWeight: 'bold' }}>
-                      Total: $22.00
+                      ......................................................................................
                     </p>
 
                     {/* Delivery Information */}
-                    <h3 style={{ margin: '20px 0 10px', fontSize: '20px', color: '#333' }}>Delivery Information</h3>
+                    <p style={{ margin: '20px 0 10px', fontSize: '20px', color: '#333' }}>Don't forget to Provide rating this will benificial for future  </p>
                     <p style={{ fontSize: '16px' }}>
-                      Address: 123 Main St, City, State, ZIP<br />
-                      Contact: (123) 456-7890
+                      Jai Hind
                     </p>
                   </td>
                 </tr>
@@ -130,4 +80,5 @@ export default function Email() {
     </table>
         </Html>
     );
+    
 }
